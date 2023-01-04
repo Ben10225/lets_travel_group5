@@ -78,13 +78,13 @@ function fetchEventApiNew(city, activityID){
                             <div class="more_img">
                                 <img src="${pictureUrl2}">
                             </div>
-                            <span>${pictureDescription2}</span>
+                            <div class="img_description">${pictureDescription2}</div>
                         </div>
                         <div class="more_info">
                             <div class="more_img">
                                 <img src="${pictureUrl3}">
                             </div>
-                            <span>${pictureDescription3}</span>
+                            <div class="img_description">${pictureDescription3}</div>
                         </div>
                     </div>
                     <div class="details_info">

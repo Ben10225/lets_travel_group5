@@ -101,20 +101,22 @@ nav{
 	align-items: center;
 	margin-bottom: 50px;
 }
-.more_info > span{
+.img_description{
 	font-size: 14px;
+	width: 32vw;
+	text-align: center;
 }
 .more_img{
 	width: 32vw;
-	height: 100%;
-	border-radius: 50px;
+	height: 42vh;
+	border-radius: 10px;
 	overflow: hidden;
 	margin: 0 50px 20px 50px;
 }
 .more_img img{
 	object-fit: cover;
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
 } 
 .buttom{
 	display: flex;
