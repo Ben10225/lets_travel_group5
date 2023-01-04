@@ -1,0 +1,537 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #444;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrapper nav {
+  width: 100%;
+  background: rgb(239, 239, 239);
+  height: 60px;
+}
+.wrapper nav ul li {
+  display: inline-block;
+}
+.wrapper section {
+  display: flex;
+  justify-content: center;
+}
+.wrapper section .taiwan_box {
+  position: relative;
+  transform: scale(0.75);
+  width: 500px;
+  height: 700px;
+  left: 150px;
+  margin-top: -40px;
+}
+.wrapper section .taiwan_box .keelung_click_box {
+  width: 90px;
+  height: 70px;
+  position: absolute;
+  top: 250px;
+  left: 140px;
+  opacity: 0;
+  z-index: 110;
+  transform: rotate(60deg);
+  border-radius: 40%;
+  display: none;
+  cursor: pointer;
+}
+.wrapper section .taiwan_box .keelung_click_box:hover + .keelung {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .keelung_click_box.show {
+  display: block;
+}
+.wrapper section .taiwan_box .taipei_click_box {
+  width: 160px;
+  height: 70px;
+  position: absolute;
+  top: 270px;
+  left: 10px;
+  opacity: 0;
+  z-index: 110;
+  transform: rotate(60deg);
+  border-radius: 25%;
+  display: none;
+  cursor: pointer;
+}
+.wrapper section .taiwan_box .taipei_click_box:hover + .taipei {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .taipei_click_box.show {
+  display: block;
+}
+.wrapper section .taiwan_box .newtaipeicity_click_box {
+  width: 360px;
+  height: 350px;
+  position: absolute;
+  top: 160px;
+  left: -55px;
+  opacity: 0;
+  z-index: 100;
+  transform: rotate(43deg);
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+.wrapper section .taiwan_box .newtaipeicity_click_box:hover + .newtaipeicity {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .newtaipeicity_click_box.show {
+  display: block;
+}
+.wrapper section .taiwan_box .taoyuan_click_box {
+  width: 330px;
+  height: 130px;
+  position: absolute;
+  top: 405px;
+  left: -220px;
+  opacity: 0;
+  z-index: 100;
+  transform: rotate(60deg);
+  border-radius: 30px;
+  cursor: pointer;
+  display: none;
+}
+.wrapper section .taiwan_box .taoyuan_click_box:hover + .taoyuan {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .taoyuan_click_box.show {
+  display: block;
+}
+.wrapper section .taiwan_box .hsinchuCounty_click_box {
+  width: 390px;
+  height: 180px;
+  position: absolute;
+  top: 495px;
+  left: -355px;
+  opacity: 0;
+  z-index: 100;
+  transform: rotate(43deg);
+  border-radius: 30px;
+  cursor: pointer;
+  display: none;
+}
+.wrapper section .taiwan_box .hsinchuCounty_click_box:hover + .hsinchuCounty {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .hsinchuCounty_click_box.show {
+  display: block;
+}
+.wrapper section .taiwan_box .district {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 60;
+  display: none;
+  opacity: 0;
+  transition: 0.4s;
+}
+.wrapper section .taiwan_box .district.keelung {
+  left: 130px;
+  top: 235px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/keelung.svg");
+  transform: scale(0.93);
+  z-index: 80;
+}
+.wrapper section .taiwan_box .district.keelung.show {
+  display: block;
+}
+.wrapper section .taiwan_box .district.keelung.show.active {
+  opacity: 1;
+}
+.wrapper section .taiwan_box .district.keelung:hover {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .district.taipei {
+  left: 17px;
+  top: 225px;
+  width: 150px;
+  height: 150px;
+  background-image: url("../image/taipei.svg");
+  transform: scale(1.07);
+  z-index: 80;
+}
+.wrapper section .taiwan_box .district.taipei.show {
+  display: block;
+}
+.wrapper section .taiwan_box .district.taipei.show.active {
+  opacity: 1;
+}
+.wrapper section .taiwan_box .district.taipei:hover {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .district.newtaipeicity {
+  left: -30px;
+  top: 195px;
+  width: 350px;
+  height: 350px;
+  background-image: url("../image/newtaipeicity.svg");
+  transform: scale(1.25);
+}
+.wrapper section .taiwan_box .district.newtaipeicity.show {
+  display: block;
+}
+.wrapper section .taiwan_box .district.newtaipeicity.show.active {
+  opacity: 1;
+}
+.wrapper section .taiwan_box .district.newtaipeicity:hover {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .district.taoyuan {
+  left: -260px;
+  top: 304px;
+  width: 300px;
+  height: 300px;
+  background-image: url("../image/taoyuan.svg");
+  transform: scale(1.19);
+}
+.wrapper section .taiwan_box .district.taoyuan.show {
+  display: block;
+}
+.wrapper section .taiwan_box .district.taoyuan.show.active {
+  opacity: 1;
+}
+.wrapper section .taiwan_box .district.taoyuan:hover {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .district.hsinchuCounty {
+  left: -310px;
+  top: 415px;
+  width: 300px;
+  height: 300px;
+  background-image: url("../image/hsinchu.svg");
+  transform: scale(1.17);
+}
+.wrapper section .taiwan_box .district.hsinchuCounty.show {
+  display: block;
+}
+.wrapper section .taiwan_box .district.hsinchuCounty.show.active {
+  opacity: 1;
+}
+.wrapper section .taiwan_box .district.hsinchuCounty:hover {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .district.miaoli {
+  left: -14px;
+  top: 111px;
+  width: 250px;
+  height: 250px;
+  background-image: url("../image/miaoli.svg");
+  transform: scale(1.17);
+  z-index: 80;
+}
+.wrapper section .taiwan_box .district.miaoli.show {
+  display: block;
+}
+.wrapper section .taiwan_box .district.miaoli.show.active {
+  opacity: 1;
+}
+.wrapper section .taiwan_box .district.miaoli:hover {
+  opacity: 0.3;
+}
+.wrapper section .taiwan_box .box_set {
+  position: absolute;
+  z-index: 50;
+  opacity: 0;
+  cursor: pointer;
+}
+.wrapper section .taiwan_box .tw_img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.4;
+  transition: 0.5s;
+}
+.wrapper section .taiwan_box .tw_img.img_click {
+  transition: 1s;
+}
+.wrapper section .taiwan_box .tw_img.img_click.north {
+  transform: scale(2.3);
+  top: 300px;
+  left: -130px;
+}
+.wrapper section .taiwan_box .tw_img.img_click.west {
+  top: 300px;
+  left: -110px;
+  transform: scale(2.2);
+}
+.wrapper section .taiwan_box .tw_img.img_click.south {
+  top: 380px;
+  left: -130px;
+  transform: scale(2.6);
+}
+.wrapper section .taiwan_box .tw_img.img_click.east {
+  top: 330px;
+  left: -140px;
+  transform: scale(3.2);
+}
+.wrapper section .taiwan_box .tw_img.img_fade {
+  opacity: 0;
+  visibility: hidden;
+}
+.wrapper section .taiwan_box .north_box {
+  width: 185px;
+  height: 265px;
+  left: 45px;
+  top: -10px;
+  transform: rotate(50deg);
+  border-radius: 50%;
+}
+.wrapper section .taiwan_box .north_box:hover ~ .north {
+  opacity: 0.8;
+}
+.wrapper section .taiwan_box .north {
+  background-image: url("../image/north.svg");
+  left: 0px;
+  top: -15px;
+}
+.wrapper section .taiwan_box .north .north_inside_box {
+  position: relative;
+  left: 35px;
+  width: 195px;
+  height: 285px;
+  transform: rotate(60deg);
+  border-radius: 50%;
+}
+.wrapper section .taiwan_box .west_box {
+  width: 285px;
+  height: 235px;
+  left: -160px;
+  top: 255px;
+  transform: rotate(-70deg);
+  border-radius: 25%;
+}
+.wrapper section .taiwan_box .west_box:hover ~ .west {
+  opacity: 0.8;
+}
+.wrapper section .taiwan_box .west {
+  background-image: url("../image/west.svg");
+  left: -172px;
+  top: 208px;
+  transform: scale(1.265);
+  position: relative;
+}
+.wrapper section .taiwan_box .west .west_inside_box {
+  position: relative;
+  width: 285px;
+  height: 280px;
+  border-radius: 50%;
+  left: 20px;
+  top: 20px;
+}
+.wrapper section .taiwan_box .south_box {
+  width: 405px;
+  height: 185px;
+  left: -300px;
+  top: 630px;
+  transform: rotate(85deg);
+  border-radius: 15%;
+}
+.wrapper section .taiwan_box .south_box:hover ~ .south {
+  opacity: 0.8;
+}
+.wrapper section .taiwan_box .south {
+  background-image: url("../image/south.svg");
+  left: -237px;
+  top: 584.3px;
+  transform: scale(1.66);
+}
+.wrapper section .taiwan_box .south .south_inside_box {
+  width: 160px;
+  height: 310px;
+  position: relative;
+  left: 80px;
+  top: -10px;
+  border-radius: 50%;
+  transform: rotate(-10deg);
+}
+.wrapper section .taiwan_box .east_box {
+  width: 745px;
+  height: 115px;
+  left: -250px;
+  top: 470px;
+  transform: rotate(-73deg);
+  border-radius: 30px;
+}
+.wrapper section .taiwan_box .east_box:hover ~ .east {
+  opacity: 0.8;
+}
+.wrapper section .taiwan_box .east {
+  background-image: url("../image/east.svg");
+  left: -22px;
+  top: 343px;
+  transform: scale(2.65);
+}
+.wrapper section .taiwan_box .east .east_inside_box {
+  width: 50px;
+  height: 310px;
+  transform: rotate(18deg);
+  position: relative;
+  left: 122px;
+  top: 1px;
+  border-radius: 50%;
+}
+.wrapper section .ability_outter {
+  position: relative;
+}
+.wrapper section .ability_outter .attraction_box {
+  width: 600px;
+  margin-top: 110px;
+  margin-left: 150px;
+  transition: 0.6s;
+  position: relative;
+}
+.wrapper section .ability_outter .attraction_box.big_district_out {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-30px);
+}
+.wrapper section .ability_outter .attraction_box.detail_box {
+  position: absolute;
+  opacity: 0;
+  left: -30px;
+  top: 0;
+  visibility: hidden;
+  transition: 0.6s;
+}
+.wrapper section .ability_outter .attraction_box.detail_box.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(30px);
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .title_rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .title_rows .attraction {
+  margin: 30px -10px 20px 0;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .title_rows .attraction .attraction_img_box {
+  width: 180px;
+  height: 120px;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .title_rows .attraction .attraction_name {
+  width: 180px;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .title_rows .attraction .attraction_district {
+  width: 180px;
+}
+.wrapper section .ability_outter .attraction_box .title {
+  color: #fff;
+}
+.wrapper section .ability_outter .attraction_box .title h2 {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 32px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper section .ability_outter .attraction_box .title hr {
+  margin-top: 5px;
+  width: 560px;
+  transition: 0.5s;
+}
+.wrapper section .ability_outter .attraction_box .title .title_rows .attraction {
+  display: inline-block;
+  margin: 15px 35px 15px 0;
+  margin-bottom: 30px;
+  transition: 0.5s;
+}
+.wrapper section .ability_outter .attraction_box .title .title_rows .attraction a {
+  text-decoration: none;
+  color: #fff;
+}
+.wrapper section .ability_outter .attraction_box .title .title_rows .attraction .attraction_img_box {
+  width: 220px;
+  height: 150px;
+  margin-top: 10px;
+  transition: 0.5s;
+  position: relative;
+}
+.wrapper section .ability_outter .attraction_box .title .title_rows .attraction .attraction_img_box .attraction_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.wrapper section .ability_outter .attraction_box .title .title_rows .attraction .attraction_img_box .attraction_img.found {
+  position: absolute;
+  z-index: 10;
+}
+.wrapper section .ability_outter .attraction_box .title .title_rows .attraction .attraction_img_box .attraction_img.notfound {
+  border-radius: 12px;
+  background-image: url("../image/picture404_2.svg");
+  position: absolute;
+  z-index: 5;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+.wrapper section .ability_outter .attraction_box .title .title_rows .attraction .attraction_name {
+  width: 230px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 15px;
+  font-weight: 300;
+  font-size: 17px;
+  transition: 0.5s;
+}
+.wrapper section .ability_outter .attraction_box .title .title_rows .attraction .attraction_district {
+  width: 230px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 300;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.wrapper section .ability_outter .attraction_box .title.title_off {
+  transition: 0.4s;
+  margin-bottom: -50px;
+}
+.wrapper section .ability_outter .attraction_box .title.title_off h2 {
+  opacity: 0.2;
+}
+.wrapper section .ability_outter .attraction_box .title.title_off hr {
+  width: 110px;
+  opacity: 0.4;
+}
+.wrapper section .ability_outter .attraction_box .title.title_off .title_rows .attraction {
+  opacity: 0;
+  visibility: hidden;
+}
+.wrapper section .ability_outter .attraction_box .title.title_off .title_rows .attraction .attraction_img_box {
+  height: 1px;
+}
+.wrapper section .ability_outter .attraction_box .title.deyail_title_off {
+  transition: 0.6s;
+  margin-bottom: -50px;
+}
+.wrapper section .ability_outter .attraction_box .title.deyail_title_off h2 {
+  opacity: 0;
+}
+.wrapper section .ability_outter .attraction_box .title.deyail_title_off hr {
+  width: 110px;
+  opacity: 0;
+}/*# sourceMappingURL=index.css.map */

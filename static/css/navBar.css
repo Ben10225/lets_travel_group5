@@ -1,0 +1,39 @@
+
+nav .icon_logo{
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+nav .logo{
+  width: 200px;
+  display: flex;
+  font-size: 30px;
+  cursor: pointer;
+}
+nav .icon_text{
+  align-items: center;
+  display: flex;
+  font-style: italic;
+  color: #9f58e1e6;
+}
+nav .marquee{
+  width: 1000px;
+  align-items: center;
+  display: flex;
+  height: 60px;
+  font-size: 20px;
+  margin-left: 100px;
+  color: olivedrab;
+}
+nav{
+  display: flex;
+  justify-content: center;
+}
+nav .marquee_icon{
+  align-items: center;
+  vertical-align: middle;
+  color: olivedrab;
+}
+nav a{
+  text-decoration: none;
+}
