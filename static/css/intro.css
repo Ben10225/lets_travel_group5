@@ -167,3 +167,54 @@ nav{
 	background-color: #7a5b48;
 	transition: ease-in-out 0.2s;
 }
+@media(max-width : 900px){
+	.top{
+		flex-direction: column-reverse;
+	}
+	.event_img{
+		width: 100%;
+		border-radius: 0%;
+		padding-bottom: 35px;
+	}
+	.event_activityName{
+		width: 100%;
+	}
+	.more_pics{
+		flex-direction: column;
+		height: auto;
+	}
+	.more_img{
+		height: 300px;
+		width: 80%;
+	}
+	.middle_container{
+		margin-top: 20px;
+	}
+	.details_info{
+		flex-direction: column-reverse;
+		height: 520px;
+	}
+	.details_info h4{
+		margin-left: 20px;
+	}
+	.map_container{
+		height: 100%;
+	}
+	.back_to_list button{
+		width: 20%;
+	}
+}
+@media(max-width : 500px){
+	.event_info{
+		padding: 0em 2em;
+	}
+	.middle_container{
+		width: 93%;
+	}
+	.details_info{
+		height: 550px;
+	}
+	.map_container{
+		height: 100%;
+	}
+}
