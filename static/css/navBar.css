@@ -33,6 +33,7 @@ nav .marquee_icon{
   align-items: center;
   vertical-align: middle;
   color: olivedrab;
+  margin-left: 40px;
 }
 nav a{
   text-decoration: none;
