@@ -1,6 +1,7 @@
 import { fetchCity, cityTransfer } from "./index2.js"
 import { getWeatherAndRender, area } from "./activity.js"
 
+const html = document.querySelector("html");
 const wrapper = document.querySelector(".wrapper");
 const attractionBox = document.querySelector(".attraction_box");
 const waiting = document.querySelector(".waiting");
@@ -116,23 +117,24 @@ function taiwanInit(){
     })
 
     setTimeout(()=>{
-      northCityLst.forEach(norCity => {
-        norCity.classList.add("show");
-      })
-
-      northClickBoxtLst.forEach(norClickbox => {
-        norClickbox.classList.add("show");
-      })
-
       titles.forEach(title => {
         title.classList.add("title_off");
       });
       
       northTitle.classList.remove("title_off");
-    }, 200)
+    }, 100)
 
     setTimeout(()=>{
-      wrapper.addEventListener("click", function out(e){
+      northCityLst.forEach(norCity => {
+        norCity.classList.add("show");
+      })
+      northClickBoxtLst.forEach(norClickbox => {
+        norClickbox.classList.add("show");
+      })
+    }, 800)
+
+    setTimeout(()=>{
+      html.addEventListener("click", function out(e){
         if(!detailBox.contains(e.target) && 
         !keelungClickBox.contains(e.target)&&
         !taipeiClickBox.contains(e.target)&&
@@ -174,7 +176,7 @@ function taiwanInit(){
           cityIsClick = false;
           tempNorth = null;
 
-          wrapper.removeEventListener("click", out);
+          html.removeEventListener("click", out);
         }
       })
     }, 1000)
@@ -191,12 +193,6 @@ function taiwanInit(){
     });
 
     setTimeout(() => {
-      westCityLst.forEach(westCity => {
-        westCity.classList.add("show");
-      });
-      westClickBoxLst.forEach(westClickbox => {
-        westClickbox.classList.add("show");
-      });
       titles.forEach(title => {
         title.classList.add("title_off");
       });
@@ -204,7 +200,16 @@ function taiwanInit(){
     }, 100);
 
     setTimeout(()=>{
-      wrapper.addEventListener("click", function out(e){
+      westCityLst.forEach(westCity => {
+        westCity.classList.add("show");
+      });
+      westClickBoxLst.forEach(westClickbox => {
+        westClickbox.classList.add("show");
+      });
+    }, 800)
+
+    setTimeout(()=>{
+      html.addEventListener("click", function out(e){
         if(!detailBox.contains(e.target) && 
         !miaoliCountyClickBox.contains(e.target) &&
         !taichungClickBox.contains(e.target) &&
@@ -236,7 +241,6 @@ function taiwanInit(){
           setTimeout(()=>{
             attractionBox.classList.remove("big_district_out");
             westTitle.classList.remove("title_off");
-            console.log('yoyo')
           }, 300);
           setTimeout(()=>{
             detailBox.replaceChildren();
@@ -246,7 +250,7 @@ function taiwanInit(){
           cityIsClick = false;
           tempWest = null;
 
-          wrapper.removeEventListener("click", out);
+          html.removeEventListener("click", out);
         }
       })
     }, 1000)
@@ -263,12 +267,6 @@ function taiwanInit(){
     })
 
     setTimeout(()=>{
-      southCityLst.forEach(southCity => {
-        southCity.classList.add("show");
-      })
-      southClickBoxLst.forEach(southClickbox => {
-        southClickbox.classList.add("show");
-      })
       titles.forEach(title => {
         title.classList.add("title_off");
       });
@@ -276,7 +274,16 @@ function taiwanInit(){
     }, 100)
 
     setTimeout(()=>{
-      wrapper.addEventListener("click", function out(e){
+      southCityLst.forEach(southCity => {
+        southCity.classList.add("show");
+      })
+      southClickBoxLst.forEach(southClickbox => {
+        southClickbox.classList.add("show");
+      })
+    }, 800)
+
+    setTimeout(()=>{
+      html.addEventListener("click", function out(e){
         if(!detailBox.contains(e.target) && 
         !chiayiClickBox.contains(e.target) &&
         !tainanClickBox.contains(e.target) &&
@@ -316,7 +323,7 @@ function taiwanInit(){
           cityIsClick = false;
           tempSouth = null;
 
-          wrapper.removeEventListener("click", out);
+          html.removeEventListener("click", out);
         }
       });
     }, 1000)
@@ -332,12 +339,6 @@ function taiwanInit(){
     })
 
     setTimeout(()=>{
-      eastCityLst.forEach(eastCity => {
-        eastCity.classList.add("show");
-      });
-      eastClickBoxLst.forEach(eastClickbox => {
-        eastClickbox.classList.add("show");
-      });
       titles.forEach(title => {
         title.classList.add("title_off");
       });
@@ -345,7 +346,16 @@ function taiwanInit(){
     }, 100)
 
     setTimeout(()=>{
-      wrapper.addEventListener("click", function out(e){
+      eastCityLst.forEach(eastCity => {
+        eastCity.classList.add("show");
+      });
+      eastClickBoxLst.forEach(eastClickbox => {
+        eastClickbox.classList.add("show");
+      });
+    }, 800)
+
+    setTimeout(()=>{
+      html.addEventListener("click", function out(e){
         if(!detailBox.contains(e.target) && 
         !yilanCountyClickBox.contains(e.target) &&
         !hualienCountyClickBox.contains(e.target) &&
@@ -384,7 +394,7 @@ function taiwanInit(){
           cityIsClick = false;
           tempEast = null;
 
-          wrapper.removeEventListener("click", out);
+          html.removeEventListener("click", out);
         };
       })
     }, 1000)

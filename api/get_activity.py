@@ -45,5 +45,8 @@ def intro_activities():
 
 @router_page_activity.route("/api/activities/<county>")
 def activities(county):
-  data = openJson(county)
+  if county == "chiayi":
+    data = openJson("chiayi") + openJson("chiayiCounty")
+  else:
+    data = openJson(county)
   return {"data": data}, 200
