@@ -236,7 +236,6 @@ function taiwanInit(){
           setTimeout(()=>{
             attractionBox.classList.remove("big_district_out");
             westTitle.classList.remove("title_off");
-            console.log('yoyo')
           }, 300);
           setTimeout(()=>{
             detailBox.replaceChildren();
