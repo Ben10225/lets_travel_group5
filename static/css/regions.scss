@@ -95,6 +95,139 @@ section {
         display: block;
       }
     }
+    .chiayi_click_box{
+      width: 330px;
+      height: 150px;
+      position: absolute;
+      top: 140px;
+      left: -165px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(9deg);
+      border-radius: 50% 20% 60% 0;
+      cursor: pointer;
+      display: none;
+      &:hover + .chiayi{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .tainan_click_box{
+      width: 173px;
+      height: 236px;
+      position: absolute;
+      top: 246px;
+      left: -147px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(40deg);
+      border-radius: 40% 30% 40% 0;
+      cursor: pointer;
+      display: none;
+      &:hover + .tainan{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .kaohsiung_click_box{
+      width: 500px;
+      height: 150px;
+      position: absolute;
+      top: 350px;
+      left: -195px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(140deg);
+      border-radius: 60% 0% 20% 0%;
+      cursor: pointer;
+      display: none;
+      &:hover + .kaohsiung{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .pingtungCounty_click_box{
+      width: 460px;
+      height: 210px;
+      position: absolute;
+      top: 610px;
+      left: -149px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(86deg);
+      border-radius: 10% 60% 100% 50%;
+      cursor: pointer;
+      display: none;
+      &:hover + .pingtungCounty{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .yilanCounty_click_box{
+      width: 180px;
+      height: 255px;
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(10deg);
+      border-radius: 100% 0% 10% 10%;
+      cursor: pointer;
+      display: none;
+      &:hover + .yilanCounty{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .hualienCounty_click_box{
+      width: 150px;
+      height: 450px;
+      position: absolute;
+      top: 200px;
+      left: -68px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(21deg);
+      border-radius: 40% 0% 5% 40%;
+      cursor: pointer;
+      display: none;
+      &:hover + .hualienCounty{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .taitungCounty_click_box{
+      width: 200px;
+      height: 340px;
+      position: absolute;
+      top: 600px;
+      left: -230px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(35deg);
+      border-radius: 20% 40% 0% 100%;
+      cursor: pointer;
+      display: none;
+      &:hover + .taitungCounty{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
     .district {
       &.taichung{
         left: 71px;
