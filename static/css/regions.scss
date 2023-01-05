@@ -1,0 +1,299 @@
+section {
+  .taiwan_box {
+    .miaoliCounty_click_box{
+      width: 280px;
+      height: 220px;
+      position: absolute;
+      top: 125px;
+      left: -20px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(-13deg);
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      &:hover + .miaoliCounty{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .taichung_click_box{
+      width: 450px;
+      height: 90px;
+      position: absolute;
+      top: 330px;
+      left: -95px;
+      opacity: 0;
+      z-index: 110;
+      transform: rotate(175deg);
+      border-radius: 100% 50% 5% 0%;
+      display: none;
+      cursor: pointer;
+      &:hover + .taichung{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .changhuaCounty_click_box{
+      width: 150px;
+      height: 170px;
+      position: absolute;
+      top: 430px;
+      left: -179px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(103deg);
+      border-radius: 30% 0% 5% 5%;
+      cursor: pointer;
+      display: none;
+      &:hover + .changhuaCounty{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .yunlinCounty_click_box{
+      width: 230px;
+      height: 170px;
+      position: absolute;
+      top: 590px;
+      left: -255px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(8deg);
+      border-radius: 30px;
+      cursor: pointer;
+      display: none;
+      &:hover + .yunlinCounty{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .nantouCounty_click_box{
+      width: 370px;
+      height: 320px;
+      position: absolute;
+      top: 420px;
+      left: -45px;
+      opacity: 0;
+      z-index: 100;
+      transform: rotate(115deg);
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      &:hover + .nantouCounty{
+        opacity: 0.3;
+      }
+      &.show{
+        display: block;
+      }
+    }
+    .district {
+      &.taichung{
+        left: 71px;
+        top: 364px;
+        width: 100px;
+        height: 30px;
+        background-image: url('../image/taichung.svg');
+        transform: scale(7.52);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.changhuaCounty{
+        left: -158px;
+        top: 450px;
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/changhua.svg');
+        transform: scale(2.2);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.yunlinCounty{
+        left: -157px;
+        top: 634px;
+        width: 70px;
+        height: 44px;
+        background-image: url('../image/yunlin.svg');
+        transform: scale(4.05);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.nantouCounty{
+        left: 88px;
+        top: 525px;
+        width: 83px;
+        height: 100px;
+        background-image: url('../image/nantou.svg');
+        transform: scale(4.06);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.chiayi{
+        left: -34px;
+        top: 185px;
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/chiayi.svg');
+        transform: scale(3.59);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.tainan{
+        left: -112px;
+        top: 310px;
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/tainan.svg');
+        transform: scale(2.6);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.kaohsiung{
+        left: -2px;
+        top: 389px;
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/kaohsiung.svg');
+        transform: scale(4.44);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.pingtungCounty{
+        left: 6px;
+        top: 649px;
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/pingtung.svg');
+        transform: scale(4.38);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.yilanCounty{
+        left: 49px;
+        top: 69px;
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/yilan.svg');
+        transform: scale(2.36);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.hualienCounty{
+        left: -35px;
+        top: 389px;
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/hualien.svg');
+        transform: scale(4.45);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+      &.taitungCounty{
+        left: -114px;
+        top: 699px;
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/taitung.svg');
+        transform: scale(4.18);
+        z-index: 80;
+        &.show{
+          display: block;
+          &.active{
+            opacity: 1;
+          }
+        }
+        &:hover{
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}

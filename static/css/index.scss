@@ -43,7 +43,6 @@ body{
         position: absolute;
         top: 250px;
         left: 140px;
-        opacity: 0;
         z-index: 110;
         transform: rotate(60deg);
         border-radius: 40%;
@@ -141,14 +140,13 @@ body{
         display: none;
         opacity: 0;
         transition: 0.4s;
-        // cursor: pointer;
         &.keelung{
           left: 130px;
-          top: 235px;
+          top: 234px;
           width: 100px;
           height: 100px;
           background-image: url('../image/keelung.svg');
-          transform: scale(0.93);
+          transform: scale(0.9);
           z-index: 80;
           &.show{
             display: block;
@@ -179,12 +177,12 @@ body{
           }
         }
         &.newtaipeicity{
-          left: -30px;
+          left: -29.7px;
           top: 195px;
           width: 350px;
           height: 350px;
           background-image: url('../image/newtaipeicity.svg');
-          transform: scale(1.25);
+          transform: scale(1.251);
           &.show{
             display: block;
             &.active{
@@ -229,13 +227,13 @@ body{
             opacity: 0.3;
           }
         }
-        &.miaoli{
+        &.miaoliCounty{
           left: -14px;
           top: 111px;
           width: 250px;
           height: 250px;
           background-image: url('../image/miaoli.svg');
-          transform: scale(1.17);
+          transform: scale(1.18);
           z-index: 80;
           &.show{
             display: block;

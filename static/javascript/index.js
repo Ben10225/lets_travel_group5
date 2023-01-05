@@ -32,7 +32,25 @@ const taipei = document.querySelector(".taipei");
 const newtaipeicity = document.querySelector(".newtaipeicity");
 const taoyuan = document.querySelector(".taoyuan");
 const hsinchu = document.querySelector(".hsinchuCounty");
-const northCityLst = [keelung, taipei, newtaipeicity, taoyuan, hsinchu]
+const northCityLst = [keelung, taipei, newtaipeicity, taoyuan, hsinchu];
+
+const miaoliCounty = document.querySelector(".miaoliCounty");
+const taichung = document.querySelector(".taichung");
+const changhuaCounty = document.querySelector(".changhuaCounty");
+const yunlinCounty = document.querySelector(".yunlinCounty");
+const nantouCounty = document.querySelector(".nantouCounty");
+const westCityLst = [miaoliCounty, taichung, changhuaCounty, yunlinCounty, nantouCounty];
+
+const chiayi = document.querySelector(".chiayi");
+const tainan = document.querySelector(".tainan");
+const kaohsiung = document.querySelector(".kaohsiung");
+const pingtungCounty = document.querySelector(".pingtungCounty");
+const southCityLst = [chiayi, tainan, kaohsiung, pingtungCounty];
+
+const yilanCounty = document.querySelector(".yilanCounty");
+const hualienCounty = document.querySelector(".hualienCounty");
+const taitungCounty = document.querySelector(".taitungCounty");
+const eastCityLst = [yilanCounty, hualienCounty, taitungCounty];
 
 const keelungClickBox = document.querySelector(".keelung_click_box");
 const taipeiClickBox = document.querySelector(".taipei_click_box");
@@ -41,15 +59,28 @@ const taoyuanClickBox = document.querySelector(".taoyuan_click_box");
 const hsinchuCountyClickBox = document.querySelector(".hsinchuCounty_click_box");
 const northClickBoxtLst = [keelungClickBox, taipeiClickBox, newtaipeicityClickBox, taoyuanClickBox, hsinchuCountyClickBox]
 
-const north_districts = document.querySelectorAll(".north_district");
-const nor_clickboxs = document.querySelectorAll(".nor_clickbox");
+const miaoliCountyClickBox = document.querySelector(".miaoliCounty_click_box");
+const taichungClickBox = document.querySelector(".taichung_click_box");
+const changhuaCountyClickBox = document.querySelector(".changhuaCounty_click_box");
+const yunlinCountyClickBox = document.querySelector(".yunlinCounty_click_box");
+const nantouCountyClickBox = document.querySelector(".nantouCounty_click_box");
+const westClickBoxLst = [miaoliCountyClickBox, taichungClickBox, changhuaCountyClickBox, yunlinCountyClickBox,nantouCountyClickBox]
 
+const north_districts = document.querySelectorAll(".north_district");
+const west_districts = document.querySelectorAll(".west_district");
+const south_districts = document.querySelectorAll(".south_district");
+const east_districts = document.querySelectorAll(".east_district");
+
+const nor_clickboxs = document.querySelectorAll(".nor_clickbox");
+const west_clickboxs = document.querySelectorAll(".west_clickbox");
 
 const detailBox = document.querySelector(".detail_box");
 
 
 let cityIsClick = false;
 let tempNorth;
+let tempWest;
+
 
 titleInit();
 taiwanInit();
@@ -133,20 +164,59 @@ function taiwanInit(){
 
     fourBox.forEach(box => {
       box.style = "pointer-events: none;"; 
-    })
+    });
+
+    setTimeout(() => {
+      westCityLst.forEach(westCity => {
+        westCity.classList.add("show");
+      });
+      westClickBoxLst.forEach(westClickbox => {
+        westClickbox.classList.add("show");
+      });
+    }, 800);
 
     setTimeout(()=>{
       wrapper.addEventListener("click", function out(e){
-        if(!attractionBox.contains(e.target) && !westInsideBox.contains(e.target)){
+        if(!attractionBox.contains(e.target) && 
+        !miaoliCountyClickBox.contains(e.target) &&
+        !taichungClickBox.contains(e.target) &&
+        !changhuaCountyClickBox.contains(e.target) &&
+        !yunlinCountyClickBox.contains(e.target) &&
+        !nantouCountyClickBox.contains(e.target)){
           west.classList.remove("img_click");
           setTimeout(()=>{
             north.classList.remove("img_fade");
             south.classList.remove("img_fade");
             east.classList.remove("img_fade");
-          }, 200)
+
+            west_districts.forEach((district) => {
+              district.classList.remove("active");
+            })
+          }, 200);
+
           fourBox.forEach(box => {
             box.style = "pointer-events: auto;"; 
-          })
+          });
+
+          westCityLst.forEach(westCity => {
+            westCity.classList.remove("show");
+          });
+
+          westClickBoxLst.forEach(westClickbox => {
+            westClickbox.classList.remove('show');
+          });
+
+          setTimeout(()=>{
+            attractionBox.classList.remove("big_district_out");
+            westTitle.classList.remove("title_off");
+          }, 300);
+          setTimeout(()=>{
+            detailBox.replaceChildren();
+          }, 400);
+
+          detailBox.classList.remove("show");
+          cityIsClick = false;
+          tempWest = null;
 
           wrapper.removeEventListener("click", out);
         }
@@ -261,6 +331,60 @@ function districtClickInit(){
       }
 
       north_districts.forEach((dis, j)=>{
+        if(index != j){
+          dis.classList.remove("active");
+        }
+      })
+    }
+  })
+  west_clickboxs.forEach((west_clickbox, index)=>{
+    west_clickbox.onclick = ()=>{
+      west_districts[index].classList.add("active");
+      attractionBox.classList.add("big_district_out");
+
+      // miaoli
+      if(index == 0){
+        if(tempWest == index){
+          return
+        }
+        cityClick("miaoliCounty");
+        tempWest = index;
+      }
+      // taichung
+      if(index == 1){ 
+        if(tempWest == index){
+          return
+        }
+        cityClick("taichung");
+        tempWest = index;
+
+      }
+      // changhua
+      if(index == 2){ 
+        if(tempWest == index){
+          return
+        }
+        cityClick("changhuaCounty");
+        tempWest = index;
+      }
+      // yunlin
+      if(index == 3){ 
+        if(tempWest == index){
+          return
+        }
+        cityClick("yunlinCounty");
+        tempWest = index;
+      }
+      // nantou
+      if(index == 4){ 
+        if(tempWest == index){
+          return
+        }
+        cityClick("nantouCounty");
+        tempWest = index;
+      }
+
+      west_districts.forEach((dis, j)=>{
         if(index != j){
           dis.classList.remove("active");
         }

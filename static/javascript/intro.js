@@ -25,7 +25,6 @@ function fetchEventApiNew(city, activityID){
     .then(data => {
         if(data){
             data = data.data;
-            console.log(data)
             let category = data.Class1;
             let activityName = data.ActivityName;
             let location = data.Location;
@@ -54,8 +53,10 @@ function fetchEventApiNew(city, activityID){
             if(pictureUrl3 === undefined){
                 pictureUrl3 = "/static/image/picture404_2.svg"
             }
-            if(pictureDescription2 === undefined | pictureDescription3 === undefined){
+            if(pictureDescription2 === undefined){
                 pictureDescription2 = ""
+            }
+            if(pictureDescription3 === undefined){
                 pictureDescription3 = ""
             }
             let html = `
@@ -77,13 +78,13 @@ function fetchEventApiNew(city, activityID){
                             <div class="more_img">
                                 <img src="${pictureUrl2}">
                             </div>
-                            <span>${pictureDescription2}</span>
+                            <div class="img_description">${pictureDescription2}</div>
                         </div>
                         <div class="more_info">
                             <div class="more_img">
                                 <img src="${pictureUrl3}">
                             </div>
-                            <span>${pictureDescription3}</span>
+                            <div class="img_description">${pictureDescription3}</div>
                         </div>
                     </div>
                     <div class="details_info">
@@ -134,10 +135,10 @@ function fetchEventApiNew(city, activityID){
 
 let map;
 
-function initMap(PositionLat, PositionLon) {
+function initMap(PositionLat, PositionLon){
     map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: PositionLat, lng: PositionLon },
-    zoom: 18,
+    zoom: 16,
   });
     const marker = new google.maps.Marker({
     position: { lat: PositionLat, lng: PositionLon },
@@ -148,10 +149,11 @@ function initMap(PositionLat, PositionLon) {
     marker.addListener("click", toggleBounce);
 }
 
-function toggleBounce() {
-    if (marker.getAnimation() !== null) {
+function toggleBounce(){
+    if(marker.getAnimation() !== null){
       marker.setAnimation(null);
-    } else {
+    } 
+    else{
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
