@@ -1,0 +1,25 @@
+.weatherdisapear{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: none;
+}
+
+.weathercontainer{
+    width: 500px;
+    position:absolute;
+    top: 117px;
+    right: 0px;
+    z-index: 11;
+}
+
+#weather{
+    font-weight: 300;
+    font-size: 14px;
+    padding-top: 5px;
+    color: white;
+    opacity: 0.7;
+}
