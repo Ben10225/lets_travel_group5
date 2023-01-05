@@ -23,6 +23,7 @@ const yilanCountyDistrict = document.querySelector(".yilanCounty");
 const hualienCountyDistrict = document.querySelector(".hualienCounty");
 const taitungCountyDistrict = document.querySelector(".taitungCounty");
 
+/*
 // 北區活動資料
 getActivityAndRender(taipeiDistrict, hr1);
 getActivityAndRender(keelungDistrict, hr1);
@@ -47,9 +48,11 @@ getActivityAndRender(pingtungCountyDistrict, hr3);
 getActivityAndRender(yilanCountyDistrict, hr4);
 getActivityAndRender(hualienCountyDistrict, hr4);
 getActivityAndRender(taitungCountyDistrict, hr4);
+*/
 
 // --- 各縣市天氣資料 --- //
 
+/*
 // 北區天氣
 getWeatherAndRender(taipeiDistrict);
 getWeatherAndRender(keelungDistrict);
@@ -74,12 +77,14 @@ getWeatherAndRender(pingtungCountyDistrict);
 getWeatherAndRender(yilanCountyDistrict);
 getWeatherAndRender(hualienCountyDistrict);
 getWeatherAndRender(taitungCountyDistrict);
+*/
 
 const CWB_API_KEY = "CWB-E0104986-D708-4C9A-BDE5-EEBAB6F55A12";
 const area = {
     "keelung":"基隆市",
     "taipei":"臺北市",
-    "newtaipeicity":"新北市",
+    // "newtaipeicity":"新北市",
+    "newTaipei":"新北市",
     "taoyuan":"桃園市",
     "hsinchuCounty":"新竹縣",
     "miaoliCounty":"苗栗縣",
@@ -158,35 +163,45 @@ function getActivityAndRender(param, hr){
     })
 }
 
-function getWeatherAndRender(param){
-    param.addEventListener("click", (event)=>{
-        const divAttribute = param.getAttribute("class");
-        let county = divAttribute.split("_")[0];
-        let city = area[county];
-        url=`https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${CWB_API_KEY}&locationName=${city}`;
-        fetch(url).then((response) => (response.json())).then((resoonseData) => {
+function getWeatherAndRender(city){
+    // param.addEventListener("click", (event)=>{
+        // const divAttribute = param.getAttribute("class");
+        // let county = divAttribute.split("_")[0];
+        // let city = area[county];
+        let url = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${CWB_API_KEY}&locationName=${city}`;
+        return fetch(url).then((response) => (response.json())).then((resoonseData) => {
             
+            // console.log(resoonseData)
             const weatherData = resoonseData.records.location[0].weatherElement;
             const weatherCondition = weatherData[0].time[1].parameter.parameterName;
             const rainyCondition = `${weatherData[1].time[1].parameter.parameterName}%`;
             const minTemperature = `${weatherData[2].time[1].parameter.parameterName}度`;
             const maxTemperature = `${weatherData[4].time[1].parameter.parameterName}度`;
-            
-            const weatherdisapear = document.querySelector(".weatherdisapear");
-            weatherdisapear.style.display = "block"
-            const attractionBox = document.querySelector(".ability_outter");
-            
-            const weathercontainer = document.createElement("div");
-            weathercontainer.className = "weathercontainer";
-            weathercontainer.id = "weather";
-            weathercontainer.textContent = `天氣狀況：${weatherCondition} 氣溫：${minTemperature} ~ ${maxTemperature} 降雨機率：${rainyCondition}`;
 
-            attractionBox.appendChild(weathercontainer);
+            // let info = `天氣狀況：${weatherCondition} 氣溫：${minTemperature} ~ ${maxTemperature} 降雨機率：${rainyCondition}` 
+            let info = [weatherCondition, minTemperature, maxTemperature, rainyCondition]
+            return info
             
-            weatherdisapear.addEventListener("click", (event)=>{
-                weathercontainer.remove();
-                weatherdisapear.style.display = "none";
-            })
+            // const weatherdisapear = document.querySelector(".weatherdisapear");
+            // weatherdisapear.style.display = "block"
+            // const attractionBox = document.querySelector(".ability_outter");
+            
+            // const weathercontainer = document.createElement("div");
+            // weathercontainer.className = "weathercontainer";
+            // weathercontainer.id = "weather";
+            // weathercontainer.textContent = `天氣狀況：${weatherCondition} 氣溫：${minTemperature} ~ ${maxTemperature} 降雨機率：${rainyCondition}`;
+
+            // attractionBox.appendChild(weathercontainer);
+            
+            // weatherdisapear.addEventListener("click", (event)=>{
+            //     weathercontainer.remove();
+            //     weatherdisapear.style.display = "none";
+            // })
         })
-    })
+    // })
+}
+
+export {
+    getWeatherAndRender,
+    area
 }

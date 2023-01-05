@@ -2,7 +2,7 @@ const detailBox = document.querySelector(".detail_box");
 
 
 function fetchCity(city){
-  fetch(`/api/activities/${city}`)
+  return fetch(`/api/activities/${city}`)
   .then((response) => response.json())
   .then((data) => {
     if(data.data){
@@ -40,6 +40,11 @@ function createCityDetails(data){
   let html = `
   <div class="north_title title title_off">
     <h2>${data[0].City.slice(0,2)}</h2>
+    <div class="weather">
+      <span class="weather_txt weather_status"></span>
+      <span class="weather_txt celsius"></span>
+      <span class="weather_txt rain"></span>
+    </div>
     <hr id="hr1">
     <div class="title_rows">
       ${detail}

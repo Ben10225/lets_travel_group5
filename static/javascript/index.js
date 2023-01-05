@@ -1,4 +1,5 @@
 import { fetchCity, cityTransfer } from "./index2.js"
+import { getWeatherAndRender, area } from "./activity.js"
 
 const wrapper = document.querySelector(".wrapper");
 const attractionBox = document.querySelector(".attraction_box");
@@ -295,7 +296,7 @@ function districtClickInit(){
         if(tempNorth == index){
           return
         }
-        cityClick("keelung", tempNorth, index);
+        cityClick("keelung");
         tempNorth = index;
       }
       // taipei
@@ -395,16 +396,26 @@ function districtClickInit(){
   })
 }
 
-function cityClick(city){
+async function cityClick(city){
   if(cityIsClick){
     document.querySelector(".detail_box").classList.remove("show");
   }
   titles.forEach(title => {
     title.classList.add("title_off");
   })
-  setTimeout(()=>{
-    fetchCity(city);
-  }, 300)
+  // setTimeout(()=>{
+  await fetchCity(city);
+
+  let weatherInfo = await getWeatherAndRender(area[`${city}`]);
+
+  let weatherStatus = document.querySelector(".weather_status");
+  let celsius = document.querySelector(".celsius");
+  let rain = document.querySelector(".rain");
+  weatherStatus.textContent = `天氣：${weatherInfo[0]}`
+  celsius.textContent = `氣溫：${weatherInfo[1]} ~ ${weatherInfo[2]}`
+  rain.textContent = `降雨：${weatherInfo[3]}`
+
+  // }, 300)
   cityIsClick = true;
 }
 
