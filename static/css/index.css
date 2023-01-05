@@ -390,6 +390,35 @@ body {
 .wrapper section .ability_outter {
   position: relative;
 }
+.wrapper section .ability_outter .waiting {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  left: 350px;
+  transform: translateY(-50%);
+}
+.wrapper section .ability_outter .waiting .waiting_img {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.wrapper section .ability_outter .waiting .waiting_img.waiting_ball {
+  position: absolute;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+  transform: scale(1.3);
+  background-image: url("../image/ball_white.gif");
+}
+.wrapper section .ability_outter .waiting .waiting_img.waiting_circle {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  transform: scale(1.3);
+  background-image: url("../image/circle_2.gif");
+}
 .wrapper section .ability_outter .attraction_box {
   width: 600px;
   margin-top: 110px;
@@ -431,6 +460,9 @@ body {
 }
 .wrapper section .ability_outter .attraction_box.detail_box .title .title_rows .attraction .attraction_district {
   width: 180px;
+}
+.wrapper section .ability_outter .attraction_box .title_init {
+  display: none;
 }
 .wrapper section .ability_outter .attraction_box .title {
   color: #fff;

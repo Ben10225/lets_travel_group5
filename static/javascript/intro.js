@@ -1,3 +1,4 @@
+
 let src = window.location.search
 strAry = src.split("&")
 let info = []
@@ -7,6 +8,9 @@ for(let i = 0; i< strAry.length; i++){
 }
 city = info[0]
 activityID = info[1]
+
+const main = document.querySelector("main");
+
 
 fetchEventApiNew(city, activityID)
 
@@ -107,7 +111,7 @@ function fetchEventApiNew(city, activityID){
                             </div>
                         </div>
                         <div class="map_container">
-						    <div class="map" id="map"></div>
+                            <div class="map" id="map"></div>
                         </div>
                     </div>
                 </div>
@@ -116,8 +120,7 @@ function fetchEventApiNew(city, activityID){
                 <button>總覽</button>
             </div>
             `
-
-            const main = document.querySelector("main");
+            
             main.insertAdjacentHTML('beforeEnd', html);
 
             let button = document.querySelector("button");
@@ -139,7 +142,7 @@ function initMap(PositionLat, PositionLon){
     map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: PositionLat, lng: PositionLon },
     zoom: 16,
-  });
+    });
     const marker = new google.maps.Marker({
     position: { lat: PositionLat, lng: PositionLon },
     map: map,
@@ -151,12 +154,12 @@ function initMap(PositionLat, PositionLon){
 
 function toggleBounce(){
     if(marker.getAnimation() !== null){
-      marker.setAnimation(null);
+        marker.setAnimation(null);
     } 
     else{
-      marker.setAnimation(google.maps.Animation.BOUNCE);
+        marker.setAnimation(google.maps.Animation.BOUNCE);
     }
-  }
+}
 
 window.initMap = initMap;
 

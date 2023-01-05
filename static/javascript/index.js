@@ -2,6 +2,7 @@ import { fetchCity, cityTransfer } from "./index2.js"
 
 const wrapper = document.querySelector(".wrapper");
 const attractionBox = document.querySelector(".attraction_box");
+const waiting = document.querySelector(".waiting");
 
 const northBox = document.querySelector(".north_box");
 const westBox = document.querySelector(".west_box");
@@ -19,6 +20,7 @@ const westTitle = document.querySelector(".west_title");
 const southTitle = document.querySelector(".south_title");
 const eastTitle = document.querySelector(".east_title");
 const titles = document.querySelectorAll(".title");
+const initTitles = document.querySelectorAll(".title_init");
 
 
 // insideBox 不需要做
@@ -81,7 +83,7 @@ let cityIsClick = false;
 let tempNorth;
 let tempWest;
 
-
+getEightCities();
 titleInit();
 taiwanInit();
 districtClickInit();
@@ -109,7 +111,7 @@ function taiwanInit(){
 
     setTimeout(()=>{
       wrapper.addEventListener("click", function out(e){
-        if(!attractionBox.contains(e.target) && 
+        if(!detailBox.contains(e.target) && 
         !keelungClickBox.contains(e.target)&&
         !taipeiClickBox.contains(e.target)&&
         !newtaipeicityClickBox.contains(e.target)&&
@@ -177,7 +179,7 @@ function taiwanInit(){
 
     setTimeout(()=>{
       wrapper.addEventListener("click", function out(e){
-        if(!attractionBox.contains(e.target) && 
+        if(!detailBox.contains(e.target) && 
         !miaoliCountyClickBox.contains(e.target) &&
         !taichungClickBox.contains(e.target) &&
         !changhuaCountyClickBox.contains(e.target) &&
@@ -236,7 +238,7 @@ function taiwanInit(){
 
     setTimeout(()=>{
       wrapper.addEventListener("click", function out(e){
-        if(!attractionBox.contains(e.target) && !southInsideBox.contains(e.target)){
+        if(!detailBox.contains(e.target) && !southInsideBox.contains(e.target)){
           south.classList.remove("img_click");
           setTimeout(()=>{
             north.classList.remove("img_fade");
@@ -264,7 +266,7 @@ function taiwanInit(){
 
     setTimeout(()=>{
       wrapper.addEventListener("click", function out(e){
-        if(!attractionBox.contains(e.target) && !eastInsideBox.contains(e.target)){
+        if(!detailBox.contains(e.target) && !eastInsideBox.contains(e.target)){
           east.classList.remove("img_click");
           setTimeout(()=>{
             north.classList.remove("img_fade");
@@ -443,70 +445,91 @@ function titleInit(){
       }
     }
   })
-
-  setTimeout(()=>{
-    northTitle.classList.remove("title_off");
-  }, 100)
 }
 
-// fetchIndexPage();
 
-fetch("/api/home/activities")
-.then((response) => response.json())
-.then((data) => {
-  if(data){
-    // console.log(data)
-    titles.forEach((title, i) => {
-      let pic1 = data.data[2*i].Picture.PictureUrl1;
-      if(pic1 === undefined){
-        pic1 = "/static/image/picture404_2.svg";
-      }
 
-      let pic2 = data.data[2*i+1].Picture.PictureUrl1;
-      if(pic2 === undefined){
-        pic2 = "/static/image/picture404_2.svg";
-      }
+function getEightCities(){
+  fetch("/api/home/activities")
+  .then((response) => response.json())
+  .then((data) => {
+    if(data){
+      titles.forEach((title, i) => {
+        let pic1 = data.data[2*i].Picture.PictureUrl1;
+        if(pic1 === undefined){
+          pic1 = "/static/image/picture404_2.svg";
+        }
+  
+        let pic2 = data.data[2*i+1].Picture.PictureUrl1;
+        if(pic2 === undefined){
+          pic2 = "/static/image/picture404_2.svg";
+        }
+  
+        let location1 = data.data[2*i].Location;
+        if(location1 === "to see the official site"){
+          location1 = "請查詢官網"
+        }else{
+          let temp = location1.split(" ")[1]
+          if(temp !== undefined){
+            location1 = temp
+          }else{
+            location1 = ""
+          }
+        }
+  
+        let location2 = data.data[2*i+1].Location;
+        if(location2 === "to see the official site"){
+          location2 = "請查詢官網"
+        }else{
+          let temp = location2.split(" ")[1]
+          if(temp !== undefined){
+            location2 = temp
+          }else{
+            location2 = ""
+          }
+        }
 
-      let location1 = data.data[2*i].Location;
-      if(location1 === "to see the official site"){
-        location1 = "請查詢官網"
-      }
-
-      let location2 = data.data[2*i+1].Location;
-      if(location2 === "to see the official site"){
-        location2 = "請查詢官網"
-      }
-
-      let city1 = cityTransfer(data.data[2*i].City)
-      let city2 = cityTransfer(data.data[2*i+1].City)
-
-      let html = `
-      <div class="title_rows">
-        <div class="attraction">
-          <a href="/activity?city=${city1}&activityID=${data.data[2*i].ActivityID}">
-            <div class="attraction_img_box">
-              <div class="attraction_img notfound"></div>
-              <div class="attraction_img found" style="background-image: url('${pic1}');"></div>
-            </div>
-          </a>
-          <h5 class="attraction_name">${data.data[2*i].ActivityName}</h5>
-          <h6 class="attraction_district">${location1}</h6>
+  
+        let city1 = cityTransfer(data.data[2*i].City)
+        let city2 = cityTransfer(data.data[2*i+1].City)
+  
+        let html = `
+        <div class="title_rows">
+          <div class="attraction">
+            <a href="/activity?city=${city1}&activityID=${data.data[2*i].ActivityID}">
+              <div class="attraction_img_box">
+                <div class="attraction_img notfound"></div>
+                <div class="attraction_img found" style="background-image: url('${pic1}');"></div>
+              </div>
+            </a>
+            <h5 class="attraction_name">${data.data[2*i].ActivityName}</h5>
+            <h6 class="attraction_district">${data.data[2*i].City} ${location1}</h6>
+          </div>
+          <div class="attraction">
+            <a href="/activity?city=${city2}&activityID=${data.data[2*i+1].ActivityID}">
+              <div class="attraction_img_box">
+                <div class="attraction_img notfound"></div>
+                <div class="attraction_img found" style="background-image: url('${pic2}');"></div>
+              </div>
+            </a>
+            <h5 class="attraction_name">${data.data[2*i+1].ActivityName}</h5>
+            <h6 class="attraction_district">${data.data[2*i+1].City} ${location2}</h6>
+          </div>
         </div>
-        <div class="attraction">
-          <a href="/activity?city=${city2}&activityID=${data.data[2*i+1].ActivityID}">
-            <div class="attraction_img_box">
-              <div class="attraction_img notfound"></div>
-              <div class="attraction_img found" style="background-image: url('${pic2}');"></div>
-            </div>
-          </a>
-          <h5 class="attraction_name">${data.data[2*i+1].ActivityName}</h5>
-          <h6 class="attraction_district">${location2}</h6>
-        </div>
-      </div>
-      `;
-      title.insertAdjacentHTML('beforeEnd', html);
-    })
-  }
-})
+        `;
+        title.insertAdjacentHTML('beforeEnd', html);
+        waiting.remove();
+        initTitles.forEach(title => {
+          title.style = "display: block;";
+        })
+        setTimeout(()=>{
+          northTitle.classList.remove("title_off");
+        }, 100)
+      })
+    }
+  })
+}
+
+
 
 
