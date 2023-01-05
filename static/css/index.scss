@@ -43,7 +43,6 @@ body{
         position: absolute;
         top: 250px;
         left: 140px;
-        opacity: 0;
         z-index: 110;
         transform: rotate(60deg);
         border-radius: 40%;
@@ -229,7 +228,7 @@ body{
             opacity: 0.3;
           }
         }
-        &.miaoli{
+        &.miaoliCounty{
           left: -14px;
           top: 111px;
           width: 250px;

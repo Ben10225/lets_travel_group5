@@ -1,0 +1,293 @@
+section .taiwan_box .miaoliCounty_click_box {
+  width: 280px;
+  height: 220px;
+  position: absolute;
+  top: 125px;
+  left: -20px;
+  opacity: 0;
+  z-index: 100;
+  transform: rotate(-13deg);
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+section .taiwan_box .miaoliCounty_click_box:hover + .miaoliCounty {
+  opacity: 0.3;
+}
+section .taiwan_box .miaoliCounty_click_box.show {
+  display: block;
+}
+section .taiwan_box .taichung_click_box {
+  width: 450px;
+  height: 90px;
+  position: absolute;
+  top: 330px;
+  left: -95px;
+  opacity: 0;
+  z-index: 110;
+  transform: rotate(175deg);
+  border-radius: 100% 50% 5% 0%;
+  display: none;
+  cursor: pointer;
+}
+section .taiwan_box .taichung_click_box:hover + .taipei {
+  opacity: 0.3;
+}
+section .taiwan_box .taichung_click_box.show {
+  display: block;
+}
+section .taiwan_box .changhuaCounty_click_box {
+  width: 150px;
+  height: 170px;
+  position: absolute;
+  top: 430px;
+  left: -179px;
+  opacity: 0;
+  z-index: 100;
+  transform: rotate(103deg);
+  border-radius: 30% 0% 5% 5%;
+  cursor: pointer;
+  display: none;
+}
+section .taiwan_box .changhuaCounty_click_box:hover + .newtaipeicity {
+  opacity: 0.3;
+}
+section .taiwan_box .changhuaCounty_click_box.show {
+  display: block;
+}
+section .taiwan_box .yunlinCounty_click_box {
+  width: 230px;
+  height: 170px;
+  position: absolute;
+  top: 590px;
+  left: -255px;
+  opacity: 0;
+  z-index: 100;
+  transform: rotate(8deg);
+  border-radius: 30px;
+  cursor: pointer;
+  display: none;
+}
+section .taiwan_box .yunlinCounty_click_box:hover + .taoyuan {
+  opacity: 0.3;
+}
+section .taiwan_box .yunlinCounty_click_box.show {
+  display: block;
+}
+section .taiwan_box .nantouCounty_click_box {
+  width: 390px;
+  height: 320px;
+  position: absolute;
+  top: 420px;
+  left: -15px;
+  opacity: 0;
+  z-index: 100;
+  transform: rotate(155deg);
+  border-radius: 100px 0px 100px 90px;
+  cursor: pointer;
+  display: none;
+}
+section .taiwan_box .nantouCounty_click_box:hover + .hsinchuCounty {
+  opacity: 0.3;
+}
+section .taiwan_box .nantouCounty_click_box.show {
+  display: block;
+}
+section .taiwan_box .district.taichung {
+  left: 71px;
+  top: 365px;
+  width: 100px;
+  height: 30px;
+  background-image: url("../image/taichung.svg");
+  transform: scale(7.53);
+  z-index: 80;
+}
+section .taiwan_box .district.taichung.show {
+  display: block;
+}
+section .taiwan_box .district.taichung.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.taichung:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.changhuaCounty {
+  left: -157px;
+  top: 450px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/changhua.svg");
+  transform: scale(2.18);
+  z-index: 80;
+}
+section .taiwan_box .district.changhuaCounty.show {
+  display: block;
+}
+section .taiwan_box .district.changhuaCounty.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.changhuaCounty:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.yunlinCounty {
+  left: -157px;
+  top: 636px;
+  width: 70px;
+  height: 44px;
+  background-image: url("../image/yunlin.svg");
+  transform: scale(4.05);
+  z-index: 80;
+}
+section .taiwan_box .district.yunlinCounty.show {
+  display: block;
+}
+section .taiwan_box .district.yunlinCounty.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.yunlinCounty:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.nantouCounty {
+  left: 90px;
+  top: 524px;
+  width: 83px;
+  height: 100px;
+  background-image: url("../image/nantou.svg");
+  transform: scale(4.04);
+  z-index: 80;
+}
+section .taiwan_box .district.nantouCounty.show {
+  display: block;
+}
+section .taiwan_box .district.nantouCounty.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.nantouCounty:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.chiayi {
+  left: -34px;
+  top: 187px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/chiayi.svg");
+  transform: scale(3.61);
+  z-index: 80;
+}
+section .taiwan_box .district.chiayi.show {
+  display: block;
+}
+section .taiwan_box .district.chiayi.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.chiayi:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.tainan {
+  left: -111px;
+  top: 310px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/tainan.svg");
+  transform: scale(2.6);
+  z-index: 80;
+}
+section .taiwan_box .district.tainan.show {
+  display: block;
+}
+section .taiwan_box .district.tainan.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.tainan:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.kaohsiung {
+  left: -1px;
+  top: 389px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/kaohsiung.svg");
+  transform: scale(4.46);
+  z-index: 80;
+}
+section .taiwan_box .district.kaohsiung.show {
+  display: block;
+}
+section .taiwan_box .district.kaohsiung.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.kaohsiung:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.pingtungCounty {
+  left: 6px;
+  top: 648px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/pingtung.svg");
+  transform: scale(4.41);
+  z-index: 80;
+}
+section .taiwan_box .district.pingtungCounty.show {
+  display: block;
+}
+section .taiwan_box .district.pingtungCounty.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.pingtungCounty:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.yilanCounty {
+  left: 52px;
+  top: 69px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/yilan.svg");
+  transform: scale(2.39);
+  z-index: 80;
+}
+section .taiwan_box .district.yilanCounty.show {
+  display: block;
+}
+section .taiwan_box .district.yilanCounty.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.yilanCounty:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.hualienCounty {
+  left: -32px;
+  top: 388px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/hualien.svg");
+  transform: scale(4.4);
+  z-index: 80;
+}
+section .taiwan_box .district.hualienCounty.show {
+  display: block;
+}
+section .taiwan_box .district.hualienCounty.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.hualienCounty:hover {
+  opacity: 0.3;
+}
+section .taiwan_box .district.taitungCounty {
+  left: -114px;
+  top: 699px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../image/taitung.svg");
+  transform: scale(4.19);
+  z-index: 80;
+}
+section .taiwan_box .district.taitungCounty.show {
+  display: block;
+}
+section .taiwan_box .district.taitungCounty.show.active {
+  opacity: 1;
+}
+section .taiwan_box .district.taitungCounty:hover {
+  opacity: 0.3;
+}/*# sourceMappingURL=regions.css.map */
