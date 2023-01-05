@@ -2,28 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // background: #444
 }
-body{
-  background: #444
+
+html {
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../image/taiwan_mountain_1.jpg');
+  z-index: -1;
 }
+
 
 .wrapper{
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-  .bg_mountain{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-repeat: repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url('../image/taiwan_mountain.jpg');
-    filter: blur(2px) brightness(40%);
-    opacity: 0.3;
-    z-index: -1;
-  }
 
   nav{
     width: 100%;
@@ -476,7 +473,7 @@ body{
               grid-template-columns: 1fr 1fr 1fr;
               // width: 600px;
               .attraction{
-                margin: 30px -10px 20px 0;
+                margin: 30px 40px 10px 0;
 
                 .attraction_img_box{
                   width: 180px;
