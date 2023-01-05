@@ -139,11 +139,11 @@ body {
 }
 .wrapper section .taiwan_box .district.keelung {
   left: 130px;
-  top: 235px;
+  top: 234px;
   width: 100px;
   height: 100px;
   background-image: url("../image/keelung.svg");
-  transform: scale(0.93);
+  transform: scale(0.9);
   z-index: 80;
 }
 .wrapper section .taiwan_box .district.keelung.show {
@@ -174,12 +174,12 @@ body {
   opacity: 0.3;
 }
 .wrapper section .taiwan_box .district.newtaipeicity {
-  left: -30px;
+  left: -29.7px;
   top: 195px;
   width: 350px;
   height: 350px;
   background-image: url("../image/newtaipeicity.svg");
-  transform: scale(1.25);
+  transform: scale(1.251);
 }
 .wrapper section .taiwan_box .district.newtaipeicity.show {
   display: block;
@@ -230,7 +230,7 @@ body {
   width: 250px;
   height: 250px;
   background-image: url("../image/miaoli.svg");
-  transform: scale(1.17);
+  transform: scale(1.18);
   z-index: 80;
 }
 .wrapper section .taiwan_box .district.miaoliCounty.show {

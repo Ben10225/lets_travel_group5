@@ -31,7 +31,7 @@ section {
       border-radius: 100% 50% 5% 0%;
       display: none;
       cursor: pointer;
-      &:hover + .taipei{
+      &:hover + .taichung{
         opacity: 0.3;
       }
       &.show{
@@ -50,7 +50,7 @@ section {
       border-radius: 30% 0% 5% 5%;
       cursor: pointer;
       display: none;
-      &:hover + .newtaipeicity{
+      &:hover + .changhuaCounty{
         opacity: 0.3;
       }
       &.show{
@@ -69,7 +69,7 @@ section {
       border-radius: 30px;
       cursor: pointer;
       display: none;
-      &:hover + .taoyuan{
+      &:hover + .yunlinCounty{
         opacity: 0.3;
       }
       &.show{
@@ -77,18 +77,18 @@ section {
       }
     }
     .nantouCounty_click_box{
-      width: 390px;
+      width: 370px;
       height: 320px;
       position: absolute;
       top: 420px;
-      left: -15px;
+      left: -45px;
       opacity: 0;
       z-index: 100;
-      transform: rotate(155deg);
-      border-radius: 100px 0px 100px 90px;
+      transform: rotate(115deg);
+      border-radius: 50%;
       cursor: pointer;
       display: none;
-      &:hover + .hsinchuCounty{
+      &:hover + .nantouCounty{
         opacity: 0.3;
       }
       &.show{
@@ -98,11 +98,11 @@ section {
     .district {
       &.taichung{
         left: 71px;
-        top: 365px;
+        top: 364px;
         width: 100px;
         height: 30px;
         background-image: url('../image/taichung.svg');
-        transform: scale(7.53);
+        transform: scale(7.52);
         z-index: 80;
         &.show{
           display: block;
@@ -115,12 +115,12 @@ section {
         }
       }
       &.changhuaCounty{
-        left: -157px;
+        left: -158px;
         top: 450px;
         width: 100px;
         height: 100px;
         background-image: url('../image/changhua.svg');
-        transform: scale(2.18);
+        transform: scale(2.2);
         z-index: 80;
         &.show{
           display: block;
@@ -134,7 +134,7 @@ section {
       }
       &.yunlinCounty{
         left: -157px;
-        top: 636px;
+        top: 634px;
         width: 70px;
         height: 44px;
         background-image: url('../image/yunlin.svg');
@@ -151,12 +151,12 @@ section {
         }
       }
       &.nantouCounty{
-        left: 90px;
-        top: 524px;
+        left: 88px;
+        top: 525px;
         width: 83px;
         height: 100px;
         background-image: url('../image/nantou.svg');
-        transform: scale(4.04);
+        transform: scale(4.06);
         z-index: 80;
         &.show{
           display: block;
@@ -170,11 +170,11 @@ section {
       }
       &.chiayi{
         left: -34px;
-        top: 187px;
+        top: 185px;
         width: 100px;
         height: 100px;
         background-image: url('../image/chiayi.svg');
-        transform: scale(3.61);
+        transform: scale(3.59);
         z-index: 80;
         &.show{
           display: block;
@@ -187,7 +187,7 @@ section {
         }
       }
       &.tainan{
-        left: -111px;
+        left: -112px;
         top: 310px;
         width: 100px;
         height: 100px;
@@ -205,12 +205,12 @@ section {
         }
       }
       &.kaohsiung{
-        left: -1px;
+        left: -2px;
         top: 389px;
         width: 100px;
         height: 100px;
         background-image: url('../image/kaohsiung.svg');
-        transform: scale(4.46);
+        transform: scale(4.44);
         z-index: 80;
         &.show{
           display: block;
@@ -224,11 +224,11 @@ section {
       }
       &.pingtungCounty{
         left: 6px;
-        top: 648px;
+        top: 649px;
         width: 100px;
         height: 100px;
         background-image: url('../image/pingtung.svg');
-        transform: scale(4.41);
+        transform: scale(4.38);
         z-index: 80;
         &.show{
           display: block;
@@ -241,12 +241,12 @@ section {
         }
       }
       &.yilanCounty{
-        left: 52px;
+        left: 49px;
         top: 69px;
         width: 100px;
         height: 100px;
         background-image: url('../image/yilan.svg');
-        transform: scale(2.39);
+        transform: scale(2.36);
         z-index: 80;
         &.show{
           display: block;
@@ -259,12 +259,12 @@ section {
         }
       }
       &.hualienCounty{
-        left: -32px;
-        top: 388px;
+        left: -35px;
+        top: 389px;
         width: 100px;
         height: 100px;
         background-image: url('../image/hualien.svg');
-        transform: scale(4.4);
+        transform: scale(4.45);
         z-index: 80;
         &.show{
           display: block;
@@ -282,7 +282,7 @@ section {
         width: 100px;
         height: 100px;
         background-image: url('../image/taitung.svg');
-        transform: scale(4.19);
+        transform: scale(4.18);
         z-index: 80;
         &.show{
           display: block;
