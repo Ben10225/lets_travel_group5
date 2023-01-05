@@ -19,7 +19,10 @@ function createCityDetails(data){
     if(pic === undefined){
       pic = "/static/image/picture404_2.svg";
     }
-
+    let location = el.Location;
+    if(location === undefined || location === "to see the official site"){
+      location = "請查詢官網"
+    }
     let city = cityTransfer(el.City)
 
     let txt = `
@@ -31,7 +34,7 @@ function createCityDetails(data){
         </div>
       </a>
       <h5 class="attraction_name found">${el.ActivityName}</h5>
-      <h6 class="attraction_district">${el.Location}</h6>
+      <h6 class="attraction_district">${location}</h6>
     </div>
     `
     detail += txt;
