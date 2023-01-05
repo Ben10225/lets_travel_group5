@@ -12,6 +12,19 @@ body{
   justify-content: center;
   flex-direction: column;
 
+  .bg_mountain{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../image/taiwan_mountain.jpg');
+    filter: blur(2px) brightness(40%);
+    opacity: 0.3;
+    z-index: -1;
+  }
+
   nav{
     width: 100%;
     background: rgb(239, 239, 239);
@@ -446,6 +459,18 @@ body{
             transform: translateX(30px);
           }
           .title{
+            .weather{
+              position: absolute;
+              left: 80px;
+              top: 23px;
+              font-size: 13px;
+              .weather_txt{
+                font-weight: 300;
+                color: #e8e8e8;
+                opacity: 0.7;
+                margin-right: 10px;
+              }
+            }
             .title_rows{
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
@@ -576,8 +601,5 @@ body{
         }
       }
     }
-  }
-  footer{
-
   }
 }

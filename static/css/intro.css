@@ -170,6 +170,7 @@ nav{
 @media(max-width : 900px){
 	.top{
 		flex-direction: column-reverse;
+		padding-top: 0px
 	}
 	.event_img{
 		width: 100%;
@@ -185,6 +186,9 @@ nav{
 	}
 	.more_img{
 		height: 300px;
+		width: 80%;
+	}
+	.img_description{
 		width: 80%;
 	}
 	.middle_container{
