@@ -43,10 +43,30 @@ def intro_activities():
   return {"data": result}, 200
 
 
-@router_page_activity.route("/api/activities/<county>")
+@router_page_activity.route("/api/activities/<county>", methods=["post"])
 def activities(county):
+  page = request.json['page']
+
   if county == "chiayi":
     data = openJson("chiayi") + openJson("chiayiCounty")
   else:
     data = openJson(county)
-  return {"data": data}, 200
+
+  if page == 0:
+    if len(data) > 9:
+      page += 1
+      result = data[:9]
+    else:
+      page = None
+      result = data
+  
+  elif page > 0:
+    if len(data[page*9:]) > 9:
+      data = data[page*9:page*9+9]
+      page += 1
+      result = data[:9]
+    else:
+      page = -1
+      result = data[page*9:]
+
+  return {"data": result, "page": page, "city": county}, 200

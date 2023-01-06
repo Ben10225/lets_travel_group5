@@ -1,4 +1,4 @@
-import { fetchCity, cityTransfer } from "./index2.js"
+import { fetchCity, cityTransfer, resetPageCount } from "./index2.js"
 import { getWeatherAndRender, area } from "./activity.js"
 
 const html = document.querySelector("html");
@@ -175,6 +175,7 @@ function taiwanInit(){
           document.querySelector(".detail_box").classList.remove("show");   
           cityIsClick = false;
           tempNorth = null;
+          resetPageCount();
 
           html.removeEventListener("click", out);
         }
@@ -249,6 +250,7 @@ function taiwanInit(){
           detailBox.classList.remove("show");
           cityIsClick = false;
           tempWest = null;
+          resetPageCount();
 
           html.removeEventListener("click", out);
         }
@@ -322,6 +324,7 @@ function taiwanInit(){
           detailBox.classList.remove("show");   
           cityIsClick = false;
           tempSouth = null;
+          resetPageCount();
 
           html.removeEventListener("click", out);
         }
@@ -393,6 +396,7 @@ function taiwanInit(){
           detailBox.classList.remove("show");   
           cityIsClick = false;
           tempEast = null;
+          resetPageCount();
 
           html.removeEventListener("click", out);
         };
@@ -406,6 +410,7 @@ function districtClickInit(){
     nor_clickbox.onclick = ()=>{
       north_districts[index].classList.add("active");
       attractionBox.classList.add("big_district_out");
+      resetPageCount();
 
       // keelung
       if(index == 0){
@@ -460,6 +465,7 @@ function districtClickInit(){
     west_clickbox.onclick = ()=>{
       west_districts[index].classList.add("active");
       attractionBox.classList.add("big_district_out");
+      resetPageCount();
 
       // miaoli
       if(index == 0){
@@ -513,6 +519,7 @@ function districtClickInit(){
     south_clickbox.onclick = ()=>{
       south_districts[index].classList.add("active");
       attractionBox.classList.add("big_district_out");
+      resetPageCount();
 
       // chiayi
       if(index == 0){
@@ -558,6 +565,7 @@ function districtClickInit(){
     east_clickbox.onclick = ()=>{
       east_districts[index].classList.add("active");
       attractionBox.classList.add("big_district_out");
+      resetPageCount();
 
       // yilanCounty
       if(index == 0){

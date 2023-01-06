@@ -230,12 +230,12 @@ section {
     }
     .district {
       &.taichung{
-        left: 71px;
+        left: 72px;
         top: 364px;
         width: 100px;
         height: 30px;
         background-image: url('../image/taichung.svg');
-        transform: scale(7.52);
+        transform: scale(7.49);
         z-index: 80;
         &.show{
           display: block;
@@ -248,12 +248,12 @@ section {
         }
       }
       &.changhuaCounty{
-        left: -158px;
-        top: 450px;
+        left: -157px;
+        top: 451px;
         width: 100px;
         height: 100px;
         background-image: url('../image/changhua.svg');
-        transform: scale(2.2);
+        transform: scale(2.19);
         z-index: 80;
         &.show{
           display: block;
@@ -266,8 +266,8 @@ section {
         }
       }
       &.yunlinCounty{
-        left: -157px;
-        top: 634px;
+        left: -156px;
+        top: 636px;
         width: 70px;
         height: 44px;
         background-image: url('../image/yunlin.svg');
@@ -284,7 +284,7 @@ section {
         }
       }
       &.nantouCounty{
-        left: 88px;
+        left: 91px;
         top: 525px;
         width: 83px;
         height: 100px;
@@ -303,7 +303,7 @@ section {
       }
       &.chiayi{
         left: -34px;
-        top: 185px;
+        top: 186px;
         width: 100px;
         height: 100px;
         background-image: url('../image/chiayi.svg');
@@ -321,7 +321,7 @@ section {
       }
       &.tainan{
         left: -112px;
-        top: 310px;
+        top: 311px;
         width: 100px;
         height: 100px;
         background-image: url('../image/tainan.svg');
@@ -374,8 +374,8 @@ section {
         }
       }
       &.yilanCounty{
-        left: 49px;
-        top: 69px;
+        left: 51px;
+        top: 68px;
         width: 100px;
         height: 100px;
         background-image: url('../image/yilan.svg');
@@ -392,7 +392,7 @@ section {
         }
       }
       &.hualienCounty{
-        left: -35px;
+        left: -32px;
         top: 389px;
         width: 100px;
         height: 100px;
@@ -410,12 +410,12 @@ section {
         }
       }
       &.taitungCounty{
-        left: -114px;
-        top: 699px;
+        left: -113px;
+        top: 700px;
         width: 100px;
         height: 100px;
         background-image: url('../image/taitung.svg');
-        transform: scale(4.18);
+        transform: scale(4.17);
         z-index: 80;
         &.show{
           display: block;
