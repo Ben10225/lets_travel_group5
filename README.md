@@ -3,7 +3,7 @@ http://travel-group5.ddnsking.com:3000/
 
 組長：彭宏倫<br/>
 負責工作：<br/>
-1 . 轉案整合<br/>
+1 . 專案整合<br/>
 2 . 首頁架構<br/>
 3 . 介面優化<br/>
 
