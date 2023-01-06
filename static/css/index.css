@@ -146,7 +146,7 @@ html {
 }
 .wrapper section .taiwan_box .district.keelung {
   left: 130px;
-  top: 234px;
+  top: 232px;
   width: 100px;
   height: 100px;
   background-image: url("../image/keelung.svg");
@@ -182,7 +182,7 @@ html {
 }
 .wrapper section .taiwan_box .district.newtaipeicity {
   left: -29.7px;
-  top: 195px;
+  top: 194px;
   width: 350px;
   height: 350px;
   background-image: url("../image/newtaipeicity.svg");
@@ -198,8 +198,8 @@ html {
   opacity: 0.3;
 }
 .wrapper section .taiwan_box .district.taoyuan {
-  left: -260px;
-  top: 304px;
+  left: -259px;
+  top: 303px;
   width: 300px;
   height: 300px;
   background-image: url("../image/taoyuan.svg");
@@ -479,6 +479,40 @@ html {
 }
 .wrapper section .ability_outter .attraction_box.detail_box .title .title_rows .attraction .attraction_district {
   width: 180px;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .can_load_btn {
+  margin-top: 40px;
+  padding-bottom: 30px;
+  opacity: 0;
+  position: relative;
+  left: 43%;
+  transition: 0.4s;
+  width: 110px;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .can_load_btn.show {
+  opacity: 0.8;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .can_load_btn h3 {
+  font-weight: 300;
+  font-size: 20px;
+  display: inline-block;
+  letter-spacing: 0.2em;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .can_load_btn .loading_gif {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../image/load.gif");
+  position: relative;
+  top: 9px;
+  left: -7px;
+}
+.wrapper section .ability_outter .attraction_box.detail_box .title .can_load_btn .target {
+  width: 50px;
+  height: 10px;
 }
 .wrapper section .ability_outter .attraction_box .title_init {
   display: none;
