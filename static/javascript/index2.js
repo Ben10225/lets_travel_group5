@@ -1,8 +1,10 @@
 const detailBox = document.querySelector(".detail_box");
-let page = 0;
-let city = null;
 
-function fetchCity(city, status){
+let page = 0;
+let canLoad = false;
+
+
+function fetchCity(city){
   return fetch(`/api/activities/${city}`, {
     method: "post",
     headers: {
@@ -18,7 +20,6 @@ function fetchCity(city, status){
       page = data.page;
       detailBox.replaceChildren();
       createCityDetails(data.data);
-      observerInit(data.city);
       if(page === null){
         let loadBtn = document.querySelector(".can_load_btn");
         loadBtn.replaceChildren();
@@ -26,12 +27,14 @@ function fetchCity(city, status){
         page = 0;
         return
       }
+      canLoad = true;
+      observerInit(data.city);
     }
   })
 }
 
 
-function fetchCityBehind(city, status){
+function fetchCityBehind(city){
   return fetch(`/api/activities/${city}`, {
     method: "post",
     headers: {
@@ -44,6 +47,7 @@ function fetchCityBehind(city, status){
   .then((response) => response.json())
   .then((data) => {
     if(data.data){
+      canLoad = true;
       createCityDetailsBehind(data.data);
       if(data.page === -1){
         let loadBtn = document.querySelector(".can_load_btn");
@@ -161,20 +165,22 @@ function observerInit(city){
   
   let callback = (entries, observer) => {
     entries.forEach(entry => {
-      ct ++;
-      if(ct > 2 && ct % 2 == 1){
-        document.querySelector(".can_load_btn").classList.add("show");
-        setTimeout(()=>{
-          fetchCityBehind(city);
-        }, 1500) 
-        // observer.unobserve(target);
+      if(canLoad){
+        ct ++;
+        if(ct > 2 && ct % 2 == 1){
+          canLoad = false;
+          document.querySelector(".can_load_btn").classList.add("show");
+          setTimeout(()=>{
+            fetchCityBehind(city);
+          }, 1500) 
+        }
       }
     })
   }
-  
-  let observer = new IntersectionObserver(callback, options);
-  const target = document.querySelector(".target");
 
+  let observer = new IntersectionObserver(callback, options);
+  
+  const target = document.querySelector(".target");
   observer.observe(target);
 };
 

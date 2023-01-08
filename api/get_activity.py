@@ -25,7 +25,6 @@ def home_activities():
   return {"data": result}, 200
 
 
-
 @router_page_activity.route("/api/intro/activities", methods=["post"])
 def intro_activities():
   city = request.json['city']
@@ -56,17 +55,17 @@ def activities(county):
     if len(data) > 9:
       page += 1
       result = data[:9]
+
     else:
       page = None
       result = data
   
   elif page > 0:
     if len(data[page*9:]) > 9:
-      data = data[page*9:page*9+9]
+      result = data[page*9:page*9+9]
       page += 1
-      result = data[:9]
     else:
-      page = -1
       result = data[page*9:]
+      page = -1
 
   return {"data": result, "page": page, "city": county}, 200
