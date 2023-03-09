@@ -5,7 +5,7 @@
 使用者可以藉由這個網站去了解 2023 年各縣市承辦的活動<br/>
 以及各縣市目前的天氣狀況<br/>
 去決定可以去哪裡郊遊～<br/>
-http://travel-group5.ddnsking.com:3000/<br/>
+http://group5.servehttp.com:4000/<br/>
 
 組長：彭宏倫<br/>
 負責工作：<br/>
